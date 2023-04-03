@@ -1,0 +1,379 @@
+body{
+    margin: 0;
+   padding: 0;
+   overflow: hidden;
+   cursor: url("../image/cursor.png"),auto;
+   
+}
+
+
+
+
+#subtitle{
+    font-family: 'Arial';
+    font-size: 26pt;
+    line-height: 20pt;
+    margin-left: 1vw;
+    color: #ffc700;
+}
+
+#sideimage{
+    margin-left: 2vh;
+    margin-top: 10vh;
+    position: absolute;
+    overflow: scroll;
+    width: 69vw;
+    height: 90vh;
+}
+
+.sideimage{
+    margin-top: 1vw;
+}
+
+
+#projectintro{
+    position: absolute;
+    right: 1vw;
+    top: 60vh;
+    width: 30vw;
+    height: 50vh;
+    overflow: scroll;
+}
+
+.projectitle{
+    margin-top: 1vh;
+    
+    overflow: hidden;
+    padding: 0.5vw;
+    word-wrap: break-word;
+    height: 3vh;
+    
+    font-family: 'Arial';
+    font-size: 20pt;
+    line-height: 20pt;
+    
+}
+.prevnext{
+    padding: 0.5vw;
+    word-wrap: break-word;
+    height: 3vh;
+    
+    font-family: 'Arial';
+    font-size: 20pt;
+    line-height: 20pt;
+    text-align: right;
+   
+    
+    
+}
+.prev{
+    opacity: 60%;
+    
+}
+
+
+.prev:hover{
+    opacity: 90%;
+}
+
+.next{
+    opacity: 60%;
+}
+
+
+.next:hover{
+    opacity: 90%;
+}
+
+
+
+.projectdescri{
+    margin-top: 1vh;
+    height: 25vh;
+    
+    overflow: hidden;
+    padding: 0.5vw;
+    
+    word-break: break-all;
+
+    font-family: 'Arial';
+    font-size: 13pt;
+    
+}
+
+#alert{
+    margin-top: 8vh;
+    height: 92vh;
+    width: 100vw;
+    padding-left: 2vw;
+    position: absolute;
+    overflow: hidden;
+    padding: 0.5vw;
+    background-color: rgb(240, 147, 206);
+    word-break: break-all;
+    font-family: 'Arial';
+    font-size: 6.7em;
+    
+    
+}
+
+#processcontent{
+    margin-top: 8vh;
+    height: 92vh;
+    width: 100vw;
+    padding-left: 2vw;
+    position: absolute;
+    overflow: hidden;
+    padding: 0.5vw;
+    background-color: rgb(240, 147, 206);
+    word-break: break-all;
+    font-family: 'Arial';
+    font-size: 6.7em;
+}
+
+
+
+
+@media only screen and (max-width: 600px) {
+#maincontent,#bgimage,#slidebara,.plane1,#sidecontent,.colorblock,#grad2,#grad3,#grad4,.mylink,.decroimg2,#formiddlescreen,#projectintro,#sideimage{
+    display: none;
+}
+
+#alert{
+    margin-top: 12vh;
+    height: 88vh;
+    font-size: 6em;
+}
+
+
+
+.typeblock{
+    width: 33.3%;
+    
+}
+
+#grad1{
+    width: 100vw;
+    height: 9vh;
+}
+
+#headimg{
+    width: 90vmin;
+}
+
+#secondtitle{
+    top: 9vh;
+}
+
+
+
+.sidewords{
+    font-size: 2em;
+    line-height: 100%;
+}
+
+#grad5,#grad6,#grad7{
+    width: 96%;
+}
+
+#grad7{
+    height: 15vh;
+}
+
+
+} 
+@media only screen and (min-width: 600px) {
+    #forsmallscreen,#grad4,#slidebara,.plane1,#maincontent,#sidecontent,#projectintro,#sideimage{
+        display: none;
+    }
+
+    
+    
+    #grad1{
+        
+        width: 45vw;
+    }
+    #grad2{
+        width: 55vw;
+    }
+    
+   
+
+
+    #headimg{
+        width: 220px;
+    }
+
+    #mylink{
+        margin-left: 47vw;
+    }
+
+    .mylink{
+        margin-top: 1.4vh;
+        margin-left: -0.8vw;
+        
+        width:12vw;
+    }
+    #grad3{
+        display: none;
+    }
+
+    .titletype{
+        
+        font-size: 1em;   
+    }
+
+    .typeblock{
+        width: 13%;     
+    }
+    .colorblock{
+        width: 6.1%;     
+    }
+
+    #formiddlescreen{
+        margin-left: 1.5vw;
+        margin-top: 10vh;
+        position: absolute;
+        overflow: scroll;
+        width: 97vw;
+        height: 90vh;
+    
+    }
+
+    #decoraimg{
+        
+        margin-top: 1vw;
+        
+    }
+}
+
+ 
+@media only screen and (min-width: 1000px) {
+    #forsmallscreen,#formiddlescreen,#alert{
+        display: none;
+    }
+    
+    #grad1{
+        
+        width: 30vw;
+    }
+    #grad2{
+        width: 40vw;
+    }
+    #grad4{
+        display:flex;
+        width: 30vw;
+        
+        
+    }
+
+    #headimg{
+        width: 220px;
+    }
+
+    #mylink{
+        margin-left: 32vw;
+    }
+
+    .mylink{
+        margin-top: 1.4vh;
+        margin-left: -0.8vw;
+        
+        width:9vw;
+    }
+    #grad3{
+        display: none;
+    }
+
+    .titletype{
+        
+        font-size: 1em;   
+    }
+
+    .typeblock{
+        width: 13%;     
+    }
+    .colorblock{
+        width: 6.1%;     
+    }
+
+    #sidecontent{
+        
+        
+        top: 55vh;
+        width: 17vw;
+        height: 90vh;
+        overflow: scroll;
+        
+    }
+
+    #slidebara,.plane1,#sidecontent,#maincontent,#projectintro,#sideimage{
+        display: block;
+    }
+
+    #decoraimg{
+        
+        margin-top: 3vw;
+        
+    }
+}
+@media only screen and (min-width: 1250px) {
+        #forsmallscreen,#formiddlescreen,#alert{
+            display: none;
+        }
+        
+        #grad1{
+            width: 19vw;
+        }
+        #grad2{
+            width: 31vw;
+        }
+        #grad3{
+            display: block;
+            width: 30vw;
+        }
+
+        #mylink{
+            margin-left: 20vw;
+        }
+
+        .mylink{
+            
+            width:7.5vw;
+        }
+    
+        #grad4{
+            width: 20vw;
+        }
+
+        .titletype{
+            font-size: 1.2em; 
+        }
+        .typeblock{
+            width: 8%;     
+        }
+        .colorblock{
+            width: 7.6%;     
+        }
+        #decoraimg{
+        
+            margin-top: 3vw;
+            
+        }
+        #projectintro,#sideimage{
+            display: block;
+        }
+    }
+
+
+    @media only screen and (min-width: 600px) {
+        #headimg{
+        margin-top: -1.5vmin;
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+        #headimg{
+        margin-top: -5vmin;
+        }
+    }
