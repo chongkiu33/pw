@@ -1,36 +1,52 @@
 
 /*loading*/
 document.addEventListener("DOMContentLoaded", function() {
-            var images = document.images;
-            var videos = document.querySelectorAll('video');
-            var totalAssets = images.length + videos.length;
-            var assetsLoaded = 0;
+    var images = document.images;
+    var videos = document.querySelectorAll('video');
+    var totalAssets = images.length + videos.length;
+    var assetsLoaded = 0;
+    var videosLoaded = 0;
+    var videoLoadThreshold = 3; // 设置阈值为3个视频
 
-            function assetLoaded() {
-                assetsLoaded++;
-                if (assetsLoaded === totalAssets) {
+    function assetLoaded() {
+        assetsLoaded++;
+        if (assetsLoaded === totalAssets || videosLoaded >= videoLoadThreshold) {
+            document.querySelector('.loaderbg').style.display = 'none';
+        }
+    }
+
+    for (var i = 0; i < images.length; i++) {
+        if (images[i].complete) {
+            assetLoaded();
+        } else {
+            images[i].addEventListener('load', assetLoaded);
+            images[i].addEventListener('error', assetLoaded); // 处理加载错误的情况
+        }
+    }
+
+    for (var j = 0; j < videos.length; j++) {
+        if (videos[j].readyState >= 3) { // 已加载足够数据，可以播放
+            assetLoaded();
+            videosLoaded++;
+            if (videosLoaded >= videoLoadThreshold) break; // 已加载三个视频，停止监听
+        } else {
+            videos[j].addEventListener('loadeddata', function() {
+                assetLoaded();
+                videosLoaded++;
+                if (videosLoaded >= videoLoadThreshold) {
                     document.querySelector('.loaderbg').style.display = 'none';
                 }
-            }
-
-            for (var i = 0; i < images.length; i++) {
-                if (images[i].complete) {
-                    assetLoaded();
-                } else {
-                    images[i].addEventListener('load', assetLoaded);
-                    images[i].addEventListener('error', assetLoaded); // 处理加载错误的情况
+            });
+            videos[j].addEventListener('error', function() {
+                assetLoaded();
+                videosLoaded++;
+                if (videosLoaded >= videoLoadThreshold) {
+                    document.querySelector('.loaderbg').style.display = 'none';
                 }
-            }
-
-            for (var j = 0; j < videos.length; j++) {
-                if (videos[j].readyState >= 3) { // 已加载足够数据，可以播放
-                    assetLoaded();
-                } else {
-                    videos[j].addEventListener('loadeddata', assetLoaded);
-                    videos[j].addEventListener('error', assetLoaded); // 处理加载错误的情况
-                }
-            }
-        });
+            }); // 处理加载错误的情况
+        }
+    }
+});
 
 
 
