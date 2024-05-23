@@ -35,11 +35,24 @@ a{
     left: 0;
     top: 0;
     z-index: 999999998;
-    display: none;
-    
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center;    /* 垂直居中 */
+    height: 100vh; /* 设置父元素高度，使子元素居中效果明显 */
+   
     
 }
 
+.loaderbg div{
+    position: absolute;
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
 
 #grad1{
     display: flex;
@@ -430,6 +443,7 @@ img.smallimg{
 
 
 
+
 .typeblock{
     width: 33.3%;
     
@@ -645,3 +659,6 @@ img.smallimg{
             
         }
     }
+
+
+    
