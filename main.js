@@ -1,13 +1,26 @@
 
 /*loading*/
-$(window).load(function(){
-    $(window).click(function(){
-        $(".loaderbg").hide();
-    })
-    
-             
-    
-})
+document.addEventListener("DOMContentLoaded", function() {
+    var images = document.images;
+    var totalImages = images.length;
+    var imagesLoaded = 0;
+
+    function imageLoaded() {
+        imagesLoaded++;
+        if (imagesLoaded === totalImages) {
+            document.querySelector('.loaderbg').style.display = 'none';
+        }
+    }
+
+    for (var i = 0; i < totalImages; i++) {
+        if (images[i].complete) {
+            imageLoaded();
+        } else {
+            images[i].addEventListener('load', imageLoaded);
+            images[i].addEventListener('error', imageLoaded); // 处理加载错误的情况
+        }
+    }
+});
 
 
 
