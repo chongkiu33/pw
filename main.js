@@ -1,26 +1,36 @@
 
 /*loading*/
 document.addEventListener("DOMContentLoaded", function() {
-    var images = document.images;
-    var totalImages = images.length;
-    var imagesLoaded = 0;
+            var images = document.images;
+            var videos = document.querySelectorAll('video');
+            var totalAssets = images.length + videos.length;
+            var assetsLoaded = 0;
 
-    function imageLoaded() {
-        imagesLoaded++;
-        if (imagesLoaded === totalImages) {
-            document.querySelector('.loaderbg').style.display = 'none';
-        }
-    }
+            function assetLoaded() {
+                assetsLoaded++;
+                if (assetsLoaded === totalAssets) {
+                    document.querySelector('.loaderbg').style.display = 'none';
+                }
+            }
 
-    for (var i = 0; i < totalImages; i++) {
-        if (images[i].complete) {
-            imageLoaded();
-        } else {
-            images[i].addEventListener('load', imageLoaded);
-            images[i].addEventListener('error', imageLoaded); // 处理加载错误的情况
-        }
-    }
-});
+            for (var i = 0; i < images.length; i++) {
+                if (images[i].complete) {
+                    assetLoaded();
+                } else {
+                    images[i].addEventListener('load', assetLoaded);
+                    images[i].addEventListener('error', assetLoaded); // 处理加载错误的情况
+                }
+            }
+
+            for (var j = 0; j < videos.length; j++) {
+                if (videos[j].readyState >= 3) { // 已加载足够数据，可以播放
+                    assetLoaded();
+                } else {
+                    videos[j].addEventListener('loadeddata', assetLoaded);
+                    videos[j].addEventListener('error', assetLoaded); // 处理加载错误的情况
+                }
+            }
+        });
 
 
 
