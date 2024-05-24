@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var totalAssets = images.length + videos.length;
     var assetsLoaded = 0;
     var videosLoaded = 0;
-    var videoLoadThreshold = 8; // 设置阈值为3个视频
+    var videoLoadThreshold = 6; // 设置阈值为3个视频
 
     function assetLoaded() {
         assetsLoaded++;
